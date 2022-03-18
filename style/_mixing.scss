@@ -1,0 +1,65 @@
+@mixin flexmid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+@mixin flexaround {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    }
+@mixin flexbetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+@mixin flexcolone {
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+@mixin rotation {
+    @keyframes rotation {
+      0% {
+          transform: rotate(-270deg);
+      }
+      100% {
+          transform: rotate(0deg);
+      }  
+    }
+}
+@keyframes pop {
+    0% {
+        transform:translateY(50%) ;
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    
+}
+@keyframes backload {
+        0% {
+          opacity: 1;
+          transform:  scale(1);
+        }
+      
+        100% {
+          opacity: 0;
+          transform:  scale(0);
+        }
+      }
+@keyframes spinload {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+    

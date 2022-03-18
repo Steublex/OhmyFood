@@ -1,0 +1,499 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+p {
+    font-weight: 400;
+}
+h3 , h2 {
+    font-family: 'Roboto', sans empattement ;
+}
+//// LOADER /////
+
+.loader {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    inset: 0;
+    background-color: #FFFFFF;
+    opacity: 0.9;
+    z-index: 1;
+    height: 100vh;
+    animation: backload 3s ease 3s  forwards;
+    .animload {
+        position: relative;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+        border: 3px solid transparent;
+        border-top-color: $colorviolet;
+        animation: spinload 1s linear infinite;
+    }
+    .animload::after {
+        content: "";
+        position: absolute;
+        inset: 3px;
+        border-radius: 50px;
+        border: 3px solid transparent;
+        border-top-color: $colorrose;
+        opacity: 0.8;
+        animation: spinload 3s linear infinite;
+    }  
+        .animload::before{
+            content: "";
+            position: absolute;
+            inset: 10px;
+            border-radius: 50px;
+            border: 3px solid transparent;
+            border-top-color: $colorvert;
+            opacity: 0.6;
+            animation: spinload 10s linear infinite;
+        } 
+    }
+
+// header //
+.boxlogo {
+    @include flexmid;
+}
+.logo {
+        width: 50%;
+        height: 50%;
+        min-width: 180px;
+}
+
+.boxnav{
+    @include flexcolone;
+    background: $colorgris1;
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+    .boxloc {
+        @include flexmid;
+        background: $colorgris2;
+        box-shadow: inset 0px 3px 5px #7a7979a9;
+        height: 15%;
+        width: 100%;
+    }
+    .txtloc {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-weight: bold;
+    }
+        .textnav {
+            padding-left: 10%;
+            padding-right: 10%;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .boxbtn {
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient($colorrose, $colorviolet);
+            box-shadow:  5px 5px 3px $colorombre;
+            height: 30%;
+            width: 65%;
+            color: white;
+            margin-top: 10px;
+            font-size: 15px;
+            &:hover {
+                transform: scale(1.3);
+                cursor: pointer;
+                transition: all 1s ease-in-out;
+            }
+
+        }
+
+    }
+// Fonctionnement // 
+
+.boxfonc {
+    @include flex;
+    height: 70px;
+    width: 90%;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    border: none;
+    margin-left: 5%;
+    box-shadow: 2px 2px 3px $colorombre, 2px -2px 5px $colorombre;
+    background-color: $colorgris1;
+    .icofon {
+        margin-left: 10%;
+        margin-right: 10%;
+
+    } 
+    .h4 {
+        @include flexmid;
+        width: 50%;
+        color: black;
+        margin-left: 10px;
+    }
+    &:hover {
+        color: $colorviolet;
+        background: rgba(240, 189, 250, 0.158);;
+        cursor: pointer;
+    }
+
+    
+    .boxfnum {
+        @include flexmid;
+        background-color: $colorviolet;
+        border-radius: 25px;
+        height: 23px;
+        width: 23px;
+        color : white;
+         margin-left: -11px;
+     }        
+}
+
+// RESTAURANT //
+
+.backrest {
+    @include flexcolone;
+    align-items: center;
+    background: $colorgris1;
+    height: auto;
+    width: 100%;
+    padding-bottom: 60px;
+    .new {
+        position: relative;
+     }
+     .new::before {
+         content: "Nouveau";
+         position: absolute;
+         height: 30px;
+         width: 80px;
+         border-radius: 5px;
+         background-color: $colorvert;
+         color: darken($colorvert, 30%);
+         display: grid;
+         place-items: center;
+         font-weight: bold;
+         right: 10px;
+         top: 10px;
+
+     }
+    .rest {
+        align-self: flex-start ;
+        padding: 10px;
+        width: 95%;
+    }
+       .boxrest {
+           height: auto;
+           width: 90%;
+           border-radius: 15px;
+           background: white;
+           margin: 10px;
+           box-shadow: 3px 3px 3px $colorombre;
+        }
+           .boxlike{
+            @include flexbetween;
+            width: 100%;
+        }
+              .imgrest {
+                  object-fit: cover;
+                  height: 180px;
+                  width: 100%;
+                  border-radius: 15px 15px 0px 0px;
+              }
+              .textrest {
+                width: 60%;
+                padding-left: 20px;
+                text-decoration: none;
+                color: black;
+              }
+              .icolike {
+                  padding-right: 20px;
+                  display: grid;
+                  position: relative;
+                  i {
+                      position: absolute;
+                      top:-17px;
+                      right: 25px;
+                      font-size: 30px;
+                  }
+                  .fa-solid {
+                      color: transparent;
+                      background-image: linear-gradient(to top,$colorrose ,$colorviolet);
+                      background-clip: text;
+                      -webkit-background-clip: text;
+                      opacity: 0;
+                      transition: all 500ms ease-in-out;
+                    }
+                    &:hover .fa-solid{
+                        opacity: 1;
+                        transform: scale(1.2);
+                        cursor: pointer;
+                        
+                    }
+                  }
+        }
+    
+
+// FOOTER // 
+
+.backfoot {
+    @include flexcolone;
+    background: rgb(49, 49, 49);
+    height: 250px;
+    padding-left: 40px;
+       .logofoot {
+           color: white;
+           font-family : 'Shrikhand', cursive ;
+           height: 30px;
+           width: 70px;
+       }
+       ul ,a{
+           color: white;
+           margin-top: 3px;
+	       padding-left: 0px;
+	       list-style-type: none;
+           line-height: 30px;
+           text-decoration: none;
+       }
+}
+
+
+
+//////// MEDIA //////////
+
+@media screen and ( min-width :800px) {
+    .logo {
+        max-width: 400px;
+    }
+    .medianav {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .boxnav {
+        width: 50%;
+    }
+    .foncmedia {
+        width: 50%;
+    }
+    .mediafonc {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .txtfonc {
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #cacaca9f;
+    box-shadow: inset 0px 3px 5px #7a7979a9;
+    height: 45px;
+    width: 100%;
+    }
+    .backrest {
+        @include flex;
+        flex-wrap: wrap;
+        max-height: 700px;
+        flex-direction: row;
+        justify-content: center;
+        
+    }
+    .boxrest {
+        max-width: 48%;
+        margin: 5px;
+    }
+
+}
+
+///////////////// MENU DES RESTAURANTS ////////////////////////////
+//// classe pour fixer taille page menu /////
+.bodyfit {
+    max-height: 2200px;
+}
+/// NAV ///
+
+.boxlogomenu {
+    @include flexmid;
+    padding-bottom: 20px;
+}
+    .logomenu {
+        width: 50%;
+       padding-left: 20px;
+       
+}
+    .arrowmenu {
+        width: 20%;
+        color: black;
+    }
+.imgrestmenu {
+    object-fit: cover;
+    height: 600px;
+    width: 100%;
+}
+
+//// MENU //// 
+
+.backmenu {
+    height: 1550px;
+    background-color: $colorgris1;
+    border-radius: 70px 70px 0px 0px;
+    position: relative;
+    bottom: 150px;
+
+}
+.topmenu {
+    @include flexbetween;
+    padding-top: 30px;
+    width: 100%;
+    .nomrest {
+        font-family : 'Shrikhand', cursive ;
+        padding-left: 30px;
+    }
+        .menulike {
+            padding-right: 20px;
+            display: grid;
+            position: relative;
+            i {
+                position: absolute;
+                top:-17px;
+                right: 70px;
+                font-size: 30px;
+            }
+            .fa-solid {
+                color: transparent;
+                background-image: linear-gradient(to top,$colorrose ,$colorviolet);
+                background-clip: text;
+                -webkit-background-clip: text;
+                opacity: 0;
+                transition: all 500ms ease-in-out;
+              }
+              &:active .fa-solid{
+                  opacity: 1;
+                  transform: scale(1.2);
+                  
+              }
+        }
+}
+.menu {
+    @include flexcolone;
+    align-items: center;
+
+    .partimenu {
+    align-self: flex-start;
+    padding-left: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    font-weight: bold;
+   &::after{
+       content: "";
+       position: absolute;
+       background-color: $colorvert;
+       height: 3px;
+       width: 40px;
+   }
+}
+
+    .boxmenu {
+        @for $p from 1 through 4 {
+            &:nth-child(#{$p}){
+            animation-delay :100ms * $p ;
+        }
+    }
+        @include flex;
+        border-radius: 20px;
+        background-color: white;
+        width: 95%;
+        height: 100px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        box-shadow: 3px 3px 3px $colorombre;
+        animation: pop 1s;
+        animation-fill-mode: both;
+        
+        &:hover .check{
+            margin-right: 0px;
+            transition: 1s ease-in-out;
+            }
+        &:hover i {
+            @include rotation;
+            animation: rotation 1s ease-in-out;
+        }
+        .txtmenu {
+            overflow: hidden;
+            white-space: nowrap;
+            padding-left: 20px;
+            h3 , p {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        .prix {
+            margin-left: auto;
+            align-self: flex-end;
+            padding-bottom: 15px;
+            padding-right: 20px;
+        }
+        .check {
+            background-color: $colorvert;
+            border-radius: 0px 20px 20px 0px;
+            height: 100px;
+            width: 80px;
+            margin-right: -80px;
+            .icocheck {
+                color: white;
+                padding-left: 20px;
+                padding-top: 40px;
+            }
+        }
+
+     }
+}
+.btnmenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .boxbtnM {
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient($colorrose, $colorviolet);
+        box-shadow:  5px 5px 3px $colorombre;
+        height: 50px;
+        width: 250px;
+        color: white;
+        margin-top: 10px;
+        font-weight: bold;
+        &:hover {
+            transform: scale(1.3);
+            cursor: pointer;
+            transition: all 1s ease-in-out;
+        }
+    }
+}
+
+
+
+/////////// FOOTER ////////
+
+.footmenu {
+    position: relative;
+    bottom: 150px;
+}
+
+///////// MEDIA MENU RESTAU ////////
+
+@media screen and ( min-width :800px) {
+    .bodyfitmenu{
+        max-height: 1400px;
+    }
+    .backmenu {
+        max-height: 700px;
+    }
+    .backmenu2 {
+        max-height: 780px;
+    }
+    .mediamenu {
+        @include flexaround;
+        flex-wrap: wrap;
+    }
+    .menu {
+        width: 30%;
+    }
+    .boxmenu {
+        width: 100%;
+    }
+}
