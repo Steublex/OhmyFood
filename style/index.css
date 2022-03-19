@@ -364,6 +364,14 @@ h3, h2 {
   bottom: 150px;
 }
 
+.backmenu2 {
+  height: 1650px;
+  background-color: #F2F2F2;
+  border-radius: 70px 70px 0px 0px;
+  position: relative;
+  bottom: 150px;
+}
+
 .topmenu {
   display: flex;
   align-items: center;
@@ -442,6 +450,9 @@ h3, h2 {
 }
 .menu .boxmenu:nth-child(4) {
   animation-delay: 400ms;
+}
+.menu .boxmenu:nth-child(5) {
+  animation-delay: 500ms;
 }
 .menu .boxmenu:hover .check {
   margin-right: 0px;
@@ -530,6 +541,12 @@ h3, h2 {
   .mediamenu {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .mediamenu2 {
+    display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
   }
